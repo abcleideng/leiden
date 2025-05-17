@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html>
+<head>
+cat > ~/Desktop/index.html << 'EOF'
+<!DOCTYPE html>
+<html>
+<head>
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>暴富分析系统 - 家禽野兽优化版</title>
+    <!-- ✅ 移动端核心优化标签 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <style>
+        :root {
+            --primary: #4CAF50;
+            --secondary: #2196F3;
+            --text: #333333;
+            --bg: #f8f9fa;
+            --poultry: #87CEFA;
+            --beast: #D2B48C;
+            --metal: #FFD700;
+            --wood: #32CD32;
+            --water: #1E90FF;
+            --fire: #FF4500;
+            --earth: #CD853F;
+        }
+        
+        /* ========== 全局优化 ========== */
+        body {
+            font-family: Arial, sans-serif;
+            width: 100%;
+            min-width: 310px;
+            margin: 0;
+            padding: 10px;
+            background: var(--bg);
+            font-size: 16px;  /* 基础字号放大 */
+            color: var(--text);
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* ========== 标题优化 ========== */
+        #appContainer > h1 {
+            font-size: 20px;
+            margin: 12px 0;
+            text-align: center;
+        }
+
+        /* ========== 输入区优化 ========== */
+        .input-box {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        
+        #inputData {
+            width: 100%;
+            height: 120px;  /* 高度增加 */
+            padding: 12px;
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+            resize: vertical;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        /* ========== 按钮组优化 ========== */
+        .btn-group {
+            margin: 15px 0;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 16px;  /* 加大按钮 */
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            min-width: 80px;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: #e0e0e0;
+            color: var(--text);
+        }
+        
+        .btn-copy {
+            background: #ff9800;
+            color: white;
+            margin-left: 10px;
+        }
+
+        /* ========== 筛选器优化 ========== */
+        .filter-item {
+            width: 36px;  /* 放大触控区域 */
+            height: 36px;
+            font-size: 16px;
+            border-radius: 18px;
+        }
+
+        /* ========== 统计结果优化 ========== */
+        .stat-line {
+            font-size: 15px;
+            white-space: normal;  /* 小屏自动换行 */
+            line-height: 1.6;
+        }
+
+        /* ========== 手机专属优化 (屏幕宽度<480px) ========== */
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 8px;
+                font-size: 15px;
+            }
+            
+            #inputData {
+                height: 150px;
+            }
+            
+            .btn {
+                padding: 12px;
+                flex-grow: 1;  /* 按钮自动填满宽度 */
+            }
+            
+            .filter-grid {
+                gap: 6px;
+            }
+            
+            .stat-group {
+                padding: 12px;
+            }
+        }
+
+        /* ========== 保持原有样式 ========== */
+        .filter-container {
+            margin-top: 10px;
+        }
+        .filter-section {
+            display: none;
+            margin-bottom: 15px;
+        }
+        .filter-section.active {
+            display: block;
+        }
+        .filter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .filter-title {
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .toggle-all {
+            font-size: 12px;
+            color: var(--primary);
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+            gap: 8px;
+        }
+        .filter-item.active {
+            background: var(--primary);
+            color: white;
+        }
+        .stat-container {
+            margin-top: 15px;
+        }
+        .stat-group {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        .stat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .stat-title {
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .toggle-stat {
+            font-size: 13px;
+            color: var(--primary);
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .stat-content {
+            display: block;
+        }
+        .stat-content.hidden {
+            display: none;
+        }
+        .stat-line::-webkit-scrollbar {
+            height: 3px;
+        }
+        .stat-line::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+        .wx-stat-line {
+            margin-bottom: 10px;
+        }
+        .wx-stat-header {
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+        .wx-stat-numbers {
+            margin-left: 20px;
+        }
+        .sx-stat-line {
+            margin-bottom: 8px;
+            padding: 6px 10px;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+        .animal-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 15px;
+        }
+        .animal-stat {
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            width: 45%;
+        }
+        .poultry-stat {
+            background: var(--poultry);
+        }
+        .beast-stat {
+            background: var(--beast);
+        }
+        .animal-type {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        .animal-count {
+            font-size: 16px;
+            color: #333;
+        }
+        .animal-percent {
+            font-size: 14px;
+            color: #555;
+        }
+        .wuxing-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .wuxing-stat {
+            padding: 8px;
+            border-radius: 6px;
+        }
+        .wuxing-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .wuxing-numbers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        .wuxing-number {
+            padding: 2px 6px;
+            border-radius: 3px;
+            background: #f0f0f0;
+        }
+        .metal-stat { background: rgba(255, 215, 0, 0.2); border-left: 3px solid var(--metal); }
+        .wood-stat { background: rgba(50, 205, 50, 0.2); border-left: 3px solid var(--wood); }
+        .water-stat { background: rgba(30, 144, 255, 0.2); border-left: 3px solid var(--water); }
+        .fire-stat { background: rgba(255, 69, 0, 0.2); border-left: 3px solid var(--fire); }
+        .earth-stat { background: rgba(205, 133, 63, 0.2); border-left: 3px solid var(--earth); }
+        .filter-result {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .filter-result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .filter-result-title {
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .filter-result-numbers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .filter-result-number {
+            padding: 3px 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+        }
+        .advanced-options {
+            margin-top: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .advanced-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .advanced-title {
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .toggle-advanced {
+            font-size: 13px;
+            color: var(--primary);
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .advanced-content {
+            display: none;
+        }
+        .advanced-content.active {
+            display: block;
+        }
+        .password-input {
+            margin-bottom: 10px;
+        }
+        .password-input input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .xinao-options {
+            margin-top: 10px;
+        }
+        .xinao-option {
+            margin-bottom: 8px;
+        }
+        .xinao-option label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .xinao-option input {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="appContainer">
+        <h1>暴富分析系统</h1>
+        <div class="input-box">
+            <textarea id="inputData" placeholder="输入示例：
+01 02 03-04 05/06 
+07（08）09 10 猴 11
+新澳1码：01 
+新澳4码：01 05 06 07
+新澳8码：08 01 10 11 12 13 14 15
+新澳12码：16 17 01 19 20 21 22 23 24 25 26 27"></textarea>
+            <div class="btn-group">
+                <button id="analyzeBtn" class="btn btn-primary">开始分析</button>
+                <button id="resetBtn" class="btn">重置系统</button>
+            </div>
+        </div>
+
+        <div class="input-box">
+            <div class="btn-group">
+                <button id="headFilterBtn" class="btn btn-secondary">头统计</button>
+                <button id="tailFilterBtn" class="btn btn-secondary">尾统计</button>
+                <button id="sxFilterBtn" class="btn btn-secondary">肖统计</button>
+            </div>
+            
+            <div class="filter-container">
+                <div id="headFilter" class="filter-section">
+                    <div class="filter-header">
+                        <span class="filter-title">头数筛选</span>
+                        <span class="toggle-all" id="toggleAllHeads">全选/全不选</span>
+                    </div>
+                    <div class="filter-grid" id="headFilters"></div>
+                </div>
+                
+                <div id="tailFilter" class="filter-section">
+                    <div class="filter-header">
+                        <span class="filter-title">尾数筛选</span>
+                        <span class="toggle-all" id="toggleAllTails">全选/全不选</span>
+                    </div>
+                    <div class="filter-grid" id="tailFilters"></div>
+                </div>
+                
+                <div id="sxFilter" class="filter-section">
+                    <div class="filter-header">
+                        <span class="filter-title">生肖筛选</span>
+                        <span class="toggle-all" id="toggleAllSx">全选/全不选</span>
+                    </div>
+                    <div class="filter-grid" id="sxFilters"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="filter-result" id="filterResultBox">
+            <div class="filter-result-header">
+                <div class="filter-result-title">筛选结果</div>
+                <button id="copyFilterBtn" class="btn btn-copy">一键复制</button>
+            </div>
+            <div id="filterResultContent">
+                请选择筛选条件...
+            </div>
+        </div>
+
+        <div class="advanced-options">
+            <div class="advanced-header">
+                <div class="advanced-title">高级用户选项</div>
+                <div class="toggle-advanced" id="toggleAdvancedBtn">显示选项</div>
+            </div>
+            <div class="advanced-content" id="advancedContent">
+                <div class="password-input">
+                    <input type="password" id="advancedPassword" placeholder="输入密码解锁高级功能">
+                </div>
+                <div class="btn-group">
+                    <button id="unlockBtn" class="btn btn-primary">解锁</button>
+                    <button id="lockBtn" class="btn">锁定</button>
+                </div>
+                <div class="xinao-options" id="xinaoOptions" style="display:none;">
+                    <div class="xinao-option">
+                        <label>
+                            <input type="checkbox" name="xinaoOption" value="1"> 新澳1码统计
+                        </label>
+                    </div>
+                    <div class="xinao-option">
+                        <label>
+                            <input type="checkbox" name="xinaoOption" value="4"> 新澳4码统计
+                        </label>
+                    </div>
+                    <div class="xinao-option">
+                        <label>
+                            <input type="checkbox" name="xinaoOption" value="8"> 新澳8码统计
+                        </label>
+                    </div>
+                    <div class="xinao-option">
+                        <label>
+                            <input type="checkbox" name="xinaoOption" value="12"> 新澳12码统计
+                        </label>
+                    </div>
+                    <div class="xinao-option">
+                        <label>
+                            <input type="checkbox" name="xinaoOption" value="intersection"> 新澳4/8/12码交集统计
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-box stat-container" id="results"></div>
+    </div>
+
+<script>
+// 配置对象
+const CONFIG = {
+    range: [1, 49],
+    filters: {
+        heads: [0,1,2,3,4],
+        tails: [0,1,2,3,4,5,6,7,8,9],
+        shengxiao: {
+            '鼠': [6,18,30,42],
+            '牛': [5,17,29,41],
+            '虎': [4,16,28,40],
+            '兔': [3,15,27,39],
+            '龙': [2,14,26,38],
+            '蛇': [1,13,25,37,49],
+            '马': [12,24,36,48],
+            '羊': [11,23,35,47],
+            '猴': [10,22,34,46],
+            '鸡': [9,21,33,45],
+            '狗': [8,20,32,44],
+            '猪': [7,19,31,43]
+        },
+        wuxing: {
+            '金': [3,4,11,12,25,26,33,34,41,42],
+            '木': [7,8,15,16,23,24,37,38,45,46],
+            '水': [13,14,21,22,29,30,43,44],
+            '火': [1,2,9,10,17,18,31,32,39,40,47,48],
+            '土': [5,6,19,20,27,28,35,36,49]
+        },
+        animalTypes: {
+            '家禽': ['牛', '马', '羊', '鸡', '狗', '猪'],
+            '野兽': ['鼠', '虎', '兔', '龙', '蛇', '猴']
+        }
+    },
+    advancedPassword: "888888"
+};
+
+// 系统状态
+let systemState = {
+    activeFilters: {
+        heads: new Set(CONFIG.filters.heads),
+        tails: new Set(CONFIG.filters.tails),
+        shengxiao: new Set(Object.keys(CONFIG.filters.shengxiao))
+    },
+    uiState: {
+        showWuxing: false,
+        showShengxiao: true,
+        activeFilterSection: null,
+        showAdvancedOptions: false,
+        advancedUnlocked: false
+    },
+    lastResults: null,
+    xinaoData: {
+        '1': new Set(),
+        '4': new Set(),
+        '8': new Set(),
+        '12': new Set()
+    }
+};
+
+// DOM元素
+const domElements = {
+    inputData: document.getElementById('inputData'),
+    results: document.getElementById('results'),
+    filterResultContent: document.getElementById('filterResultContent'),
+    advancedContent: document.getElementById('advancedContent'),
+    xinaoOptions: document.getElementById('xinaoOptions'),
+    advancedPassword: document.getElementById('advancedPassword'),
+    headFilters: document.getElementById('headFilters'),
+    tailFilters: document.getElementById('tailFilters'),
+    sxFilters: document.getElementById('sxFilters'),
+    headFilter: document.getElementById('headFilter'),
+    tailFilter: document.getElementById('tailFilter'),
+    sxFilter: document.getElementById('sxFilter')
+};
+
+// 初始化筛选器
+function initFilters() {
+    // 头部筛选
+    domElements.headFilters.innerHTML = '';
+    CONFIG.filters.heads.forEach(item => {
+        const btn = document.createElement('div');
+        btn.className = `filter-item ${systemState.activeFilters.heads.has(item) ? 'active' : ''}`;
+        btn.textContent = item;
+        btn.addEventListener('click', () => toggleFilter('heads', item, btn));
+        domElements.headFilters.appendChild(btn);
+    });
+    
+    // 尾部筛选
+    domElements.tailFilters.innerHTML = '';
+    CONFIG.filters.tails.forEach(item => {
+        const btn = document.createElement('div');
+        btn.className = `filter-item ${systemState.activeFilters.tails.has(item) ? 'active' : ''}`;
+        btn.textContent = item;
+        btn.addEventListener('click', () => toggleFilter('tails', item, btn));
+        domElements.tailFilters.appendChild(btn);
+    });
+    
+    // 生肖筛选
+    domElements.sxFilters.innerHTML = '';
+    Object.keys(CONFIG.filters.shengxiao).forEach(sx => {
+        const btn = document.createElement('div');
+        btn.className = `filter-item ${systemState.activeFilters.shengxiao.has(sx) ? 'active' : ''}`;
+        btn.textContent = sx;
+        btn.addEventListener('click', () => toggleFilter('shengxiao', sx, btn));
+        domElements.sxFilters.appendChild(btn);
+    });
+}
+
+// 切换筛选条件
+function toggleFilter(type, value, btn) {
+    if (systemState.activeFilters[type].has(value)) {
+        systemState.activeFilters[type].delete(value);
+        btn.classList.remove('active');
+    } else {
+        systemState.activeFilters[type].add(value);
+        btn.classList.add('active');
+    }
+    updateFilterResult();
+    
+    // 如果有输入内容，自动分析
+    if (domElements.inputData.value.trim()) {
+        analyze();
+    }
+}
+
+// 全选/全不选
+function toggleAll(type) {
+    const allSelected = type === 'shengxiao' 
+        ? Object.keys(CONFIG.filters[type]).every(item => systemState.activeFilters[type].has(item))
+        : CONFIG.filters[type].every(item => systemState.activeFilters[type].has(item));
+    
+    if (allSelected) {
+        systemState.activeFilters[type].clear();
+    } else {
+        if (type === 'shengxiao') {
+            Object.keys(CONFIG.filters[type]).forEach(item => {
+                systemState.activeFilters[type].add(item);
+            });
+        } else {
+            CONFIG.filters[type].forEach(item => {
+                systemState.activeFilters[type].add(item);
+            });
+        }
+    }
+    
+    // 更新UI
+    const containerId = type === 'heads' ? 'headFilters' : 
+                       type === 'tails' ? 'tailFilters' : 'sxFilters';
+    const items = document.querySelectorAll(`#${containerId} .filter-item`);
+    items.forEach(item => {
+        item.classList.toggle('active', !allSelected);
+    });
+    
+    updateFilterResult();
+    
+    if (domElements.inputData.value.trim()) {
+        analyze();
+    }
+}
+
+// 切换筛选区块显示
+function toggleFilterSection(type) {
+    const sections = {
+        'head': domElements.headFilter,
+        'tail': domElements.tailFilter,
+        'sx': domElements.sxFilter
+    };
+    
+    if (systemState.uiState.activeFilterSection === type) {
+        sections[type].classList.remove('active');
+        systemState.uiState.activeFilterSection = null;
+    } else {
+        Object.keys(sections).forEach(key => {
+            sections[key].classList.remove('active');
+        });
+        sections[type].classList.add('active');
+        systemState.uiState.activeFilterSection = type;
+    }
+}
+
+// 分析函数
+function analyze() {
+    const input = domElements.inputData.value;
+    if (!input.trim()) {
+        alert('请输入要分析的内容！');
+        return;
+    }
+    
+    const numbers = processInput(input);
+    if (numbers.length === 0) {
+        alert('没有找到符合条件的数字！');
+        return;
+    }
+    
+    const results = calculateStatistics(numbers);
+    systemState.lastResults = results;
+    renderResults(results);
+}
+
+// 处理输入数据
+function processInput(input) {
+    parseXinaoData(input);
+    const selectedOptions = getSelectedXinaoOptions();
+    
+    if (selectedOptions.length > 0) {
+        let resultNumbers = [];
+        
+        if (selectedOptions.includes('intersection')) {
+            const intersection = [...systemState.xinaoData['4']]
+                .filter(num => systemState.xinaoData['8'].has(num) && systemState.xinaoData['12'].has(num));
+            resultNumbers = intersection;
+            
+            if (selectedOptions.includes('1')) {
+                resultNumbers = [...resultNumbers, ...systemState.xinaoData['1']];
+            }
+        } else {
+            selectedOptions.forEach(option => {
+                resultNumbers = [...resultNumbers, ...systemState.xinaoData[option]];
+            });
+        }
+        
+        resultNumbers = [...new Set(resultNumbers)];
+        
+        return resultNumbers.filter(n => {
+            const head = Math.floor(n / 10);
+            const tail = n % 10;
+            const sxMatch = Array.from(systemState.activeFilters.shengxiao).some(sx => 
+                CONFIG.filters.shengxiao[sx].includes(n));
+            return systemState.activeFilters.heads.has(head) &&
+                   systemState.activeFilters.tails.has(tail) &&
+                   sxMatch;
+        });
+    }
+    
+    const lines = input.split('\n');
+    const numbers = [];
+    const skipPatterns = [
+        /http[s]?:\/\/[^\s]+/i,
+        /[0-9]{4}年[0-9]{1,2}月[0-9]{1,2}日/,
+        /第[0-9]+期/,
+        /[0-9]{4}\/[0-9]{1,2}\/[0-9]{1,2}/,
+        /[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}/,
+        /@[^\s]+/,
+        /编号[：:]\s*[0-9]+/
+    ];
+    
+    lines.forEach(line => {
+        if (line.trim() === '' || skipPatterns.some(pattern => pattern.test(line))) return;
+        
+        const lineNumbers = line.match(/\d+/g) || [];
+        lineNumbers.forEach(numStr => {
+            const num = parseInt(numStr);
+            if (num >= CONFIG.range[0] && num <= CONFIG.range[1]) {
+                numbers.push(num);
+            }
+        });
+    });
+    
+    return numbers.filter(n => {
+        const head = Math.floor(n / 10);
+        const tail = n % 10;
+        const sxMatch = Array.from(systemState.activeFilters.shengxiao).some(sx => 
+            CONFIG.filters.shengxiao[sx].includes(n));
+        return systemState.activeFilters.heads.has(head) &&
+               systemState.activeFilters.tails.has(tail) &&
+               sxMatch;
+    });
+}
+
+// 计算统计结果
+function calculateStatistics(numbers) {
+    const base = new Map();
+    for(let i = 1; i <= 49; i++) base.set(i, 0);
+    numbers.forEach(n => base.set(n, (base.get(n) || 0) + 1));
+
+    const countGroups = {};
+    base.forEach((count, num) => {
+        if (!countGroups[count]) countGroups[count] = [];
+        countGroups[count].push(num);
+    });
+
+    const wuxingStats = {};
+    let totalWuxingCount = 0;
+    
+    Object.entries(CONFIG.filters.wuxing).forEach(([name, nums]) => {
+        const total = nums.reduce((sum, n) => sum + (base.get(n) || 0), 0);
+        wuxingStats[name] = {
+            total: total,
+            numbers: nums,
+            countGroups: {}
+        };
+        totalWuxingCount += total;
+    });
+    
+    Object.keys(wuxingStats).forEach(name => {
+        const percent = totalWuxingCount > 0 
+            ? ((wuxingStats[name].total / totalWuxingCount) * 100).toFixed(1)
+            : '0.0';
+        wuxingStats[name].percentage = percent;
+    });
+
+    const sxStats = {};
+    Object.entries(CONFIG.filters.shengxiao).forEach(([name, nums]) => {
+        const items = nums.map(n => ({
+            number: n,
+            count: base.get(n)
+        }));
+        
+        const sxCountGroups = {};
+        items.forEach(item => {
+            if (!sxCountGroups[item.count]) sxCountGroups[item.count] = [];
+            sxCountGroups[item.count].push(item.number);
+        });
+        
+        sxStats[name] = {
+            total: items.filter(i => i.count > 0).length,
+            countGroups: sxCountGroups,
+            percentage: ((items.filter(i => i.count > 0).length / nums.length) * 100).toFixed(1),
+            totalCount: items.reduce((sum, item) => sum + item.count, 0)
+        };
+    });
+
+    const animalStats = calculateAnimalStats(numbers, sxStats);
+
+    return {
+        total: numbers.length,
+        countGroups: countGroups,
+        wuxingStats: wuxingStats,
+        sxStats: sxStats,
+        animalStats: animalStats,
+        totalWuxingCount: totalWuxingCount
+    };
+}
+
+// 计算家禽野兽统计
+function calculateAnimalStats(numbers, sxStats) {
+    const animalStats = {
+        '家禽': { count: 0, numbers: [], details: {} },
+        '野兽': { count: 0, numbers: [], details: {} }
+    };
+    
+    Object.entries(CONFIG.filters.animalTypes).forEach(([type, animals]) => {
+        animals.forEach(animal => {
+            if (sxStats[animal]) {
+                const animalTotal = Object.entries(sxStats[animal].countGroups)
+                    .reduce((sum, [count, nums]) => sum + (parseInt(count) * nums.length), 0);
+                
+                animalStats[type].count += animalTotal;
+                animalStats[type].details[animal] = {
+                    count: animalTotal,
+                    numbers: []
+                };
+                
+                Object.entries(sxStats[animal].countGroups).forEach(([count, nums]) => {
+                    nums.forEach(num => {
+                        animalStats[type].numbers.push(num);
+                        animalStats[type].details[animal].numbers.push(num);
+                    });
+                });
+            }
+        });
+    });
+    
+    const totalAnimals = animalStats['家禽'].count + animalStats['野兽'].count;
+    if (totalAnimals > 0) {
+        animalStats['家禽'].percent = ((animalStats['家禽'].count / totalAnimals) * 100).toFixed(1);
+        animalStats['野兽'].percent = ((animalStats['野兽'].count / totalAnimals) * 100).toFixed(1);
+    } else {
+        animalStats['家禽'].percent = '0.0';
+        animalStats['野兽'].percent = '0.0';
+    }
+    
+    return animalStats;
+}
+
+// 解析新澳码数据
+
+function parseXinaoData(input) {
+    systemState.xinaoData = {
+        '1': new Set(),
+        '4': new Set(),
+        '8': new Set(),
+        '12': new Set()
+    };
+    
+    const skipPatterns = [
+        /http[s]?:\/\/[^\s]+/i,
+        /[0-9]{4}年[0-9]{1,2}月[0-9]{1,2}日/,
+        /第[0-9]+期/,
+        /[0-9]{4}\/[0-9]{1,2}\/[0-9]{1,2}/,
+        /[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}/,
+        /@[^\s]+/,
+        /编号[：:]\s*[0-9]+/,
+        /新澳[0-9]+期/ // 排除"新澳123期"这样的期号
+    ];
+    
+    const lines = input.split('\n');
+    
+    lines.forEach(line => {
+        if (line.trim() === '' || skipPatterns.some(pattern => pattern.test(line))) return;
+        
+        // 匹配"新澳1码："并提取后面的数字，排除"1"
+        const regex1 = /^新[澳奥]\s*1码[：:]\s*([\d\s、，,\.\-~\/（）()]+)/;
+        const match1 = line.match(regex1);
+        if (match1) {
+            const numbers = match1[1].match(/\d+/g) || [];
+            numbers.forEach(num => {
+                const n = parseInt(num);
+                if (n >= 1 && n <= 49 && n !== 1) { // 排除1
+                    systemState.xinaoData['1'].add(n);
+                }
+            });
+            return;
+        }
+        
+        // 匹配"新澳4码："并提取后面的数字，排除"4"
+        const regex4 = /^新[澳奥]\s*4码[：:]\s*([\d\s、，,\.\-~\/（）()]+)/;
+        const match4 = line.match(regex4);
+        if (match4) {
+            const numbers = match4[1].match(/\d+/g) || [];
+            numbers.forEach(num => {
+                const n = parseInt(num);
+                if (n >= 1 && n <= 49 && n !== 4) { // 排除4
+                    systemState.xinaoData['4'].add(n);
+                }
+            });
+            return;
+        }
+        
+        // 匹配"新澳8码："并提取后面的数字，排除"8"
+        const regex8 = /^新[澳奥]\s*8码[：:]\s*([\d\s、，,\.\-~\/（）()]+)/;
+        const match8 = line.match(regex8);
+        if (match8) {
+            const numbers = match8[1].match(/\d+/g) || [];
+            numbers.forEach(num => {
+                const n = parseInt(num);
+                if (n >= 1 && n <= 49 && n !== 8) { // 排除8
+                    systemState.xinaoData['8'].add(n);
+                }
+            });
+            return;
+        }
+        
+        // 匹配"新澳12码："并提取后面的数字，排除"12"
+        const regex12 = /^新[澳奥]\s*12码[：:]\s*([\d\s、，,\.\-~\/（）()]+)/;
+        const match12 = line.match(regex12);
+        if (match12) {
+            const numbers = match12[1].match(/\d+/g) || [];
+            numbers.forEach(num => {
+                const n = parseInt(num);
+                if (n >= 1 && n <= 49 && n !== 12) { // 排除12
+                    systemState.xinaoData['12'].add(n);
+                }
+            });
+            return;
+        }
+    });
+}
+
+// 获取选中的新澳码选项
+function getSelectedXinaoOptions() {
+    if (!systemState.uiState.advancedUnlocked) return [];
+    
+    const options = document.querySelectorAll('#xinaoOptions input[name="xinaoOption"]:checked');
+    return Array.from(options).map(opt => opt.value);
+}
+
+// 更新筛选结果展示
+function updateFilterResult() {
+    const selectedNumbers = getFilteredNumbers();
+    
+    if (selectedNumbers.length === 0) {
+        domElements.filterResultContent.innerHTML = '请选择筛选条件...';
+        return;
+    }
+    
+    const sortedNumbers = [...selectedNumbers].sort((a, b) => a - b);
+    
+    let html = '<div class="filter-result-numbers">';
+    sortedNumbers.forEach(num => {
+        html += `<span class="filter-result-number">${num.toString().padStart(2, '0')}</span>`;
+    });
+    html += '</div>';
+    html += `<div style="margin-top:10px;color:#666;">共 ${sortedNumbers.length} 个数字</div>`;
+    
+    domElements.filterResultContent.innerHTML = html;
+}
+
+// 获取当前筛选条件下的所有数字
+function getFilteredNumbers() {
+    const result = new Set();
+    const selectedShengxiao = Array.from(systemState.activeFilters.shengxiao);
+    
+    for (let num = 1; num <= 49; num++) {
+        const head = Math.floor(num / 10);
+        const tail = num % 10;
+        const sxMatch = selectedShengxiao.some(sx => 
+            CONFIG.filters.shengxiao[sx].includes(num));
+        
+        if (systemState.activeFilters.heads.has(head) &&
+            systemState.activeFilters.tails.has(tail) &&
+            sxMatch) {
+            result.add(num);
+        }
+    }
+    
+    return Array.from(result);
+}
+
+// 复制筛选结果
+function copyFilterResult() {
+    const selectedNumbers = getFilteredNumbers();
+    if (selectedNumbers.length === 0) {
+        alert('没有可复制的数字！');
+        return;
+    }
+    
+    const sortedNumbers = [...selectedNumbers].sort((a, b) => a - b);
+    const numbersStr = sortedNumbers.map(num => num.toString().padStart(2, '0')).join(' ');
+    
+    navigator.clipboard.writeText(numbersStr).then(() => {
+        alert('筛选结果已复制到剪贴板！');
+    }).catch(err => {
+        console.error('复制失败:', err);
+        const textarea = document.createElement('textarea');
+        textarea.value = numbersStr;
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy');
+            alert('筛选结果已复制到剪贴板！');
+        } catch (err) {
+            alert('复制失败，请手动复制: ' + numbersStr);
+        }
+        document.body.removeChild(textarea);
+    });
+}
+
+// 格式化五行统计
+function formatWuxingStats(wuxingStats) {
+    const sortedWuxing = Object.entries(wuxingStats)
+        .sort((a, b) => parseFloat(b[1].percentage) - parseFloat(a[1].percentage));
+    
+    let html = '<div class="wuxing-stats">';
+    
+    sortedWuxing.forEach(([name, data]) => {
+        const clsName = name === '金' ? 'metal-stat' :
+                       name === '木' ? 'wood-stat' :
+                       name === '水' ? 'water-stat' :
+                       name === '火' ? 'fire-stat' : 'earth-stat';
+        
+        html += `
+        <div class="wuxing-stat ${clsName}">
+            <div class="wuxing-header">
+                <span>${name}</span>
+                <span>${data.percentage}% (${data.total}次)</span>
+            </div>
+            <div class="wuxing-numbers">
+                ${data.numbers.map(n => `<span class="wuxing-number">${n.toString().padStart(2, '0')}</span>`).join('')}
+            </div>
+        </div>`;
+    });
+    
+    html += '</div>';
+    return html;
+}
+
+// 格式化生肖统计
+function formatShengxiaoStats(sxStats) {
+    const sortedSx = Object.entries(sxStats)
+        .map(([name, data]) => ({
+            name,
+            totalCount: data.totalCount
+        }))
+        .sort((a, b) => b.totalCount - a.totalCount);
+
+    const countGroups = {};
+    sortedSx.forEach(sx => {
+        const count = sx.totalCount;
+        if (!countGroups[count]) countGroups[count] = [];
+        countGroups[count].push(sx.name);
+    });
+
+    let result = '';
+    
+    Object.keys(countGroups)
+        .sort((a, b) => b - a)
+        .forEach(count => {
+            const sxList = countGroups[count].join(' ');
+            const totalSx = countGroups[count].length;
+            
+            result += `
+            <div class="sx-stat-line">
+                〖${count}次〗${sxList}（共计${totalSx}个）
+            </div>`;
+        });
+
+    return result;
+}
+
+// 渲染家禽野兽统计
+function renderAnimalStats(animalStats) {
+    return `
+    <div class="stat-group">
+        <div class="stat-title">家禽野兽统计</div>
+        <div class="stat-content">
+            <div class="animal-stats">
+                <div class="animal-stat beast-stat">
+                    <div class="animal-type">野兽</div>
+                    <div class="animal-count">〖${animalStats['野兽'].count}次〗</div>
+                    <div class="animal-percent">${animalStats['野兽'].percent}%</div>
+                </div>
+                <div class="animal-stat poultry-stat">
+                    <div class="animal-type">家禽</div>
+                    <div class="animal-count">〖${animalStats['家禽'].count}次〗</div>
+                    <div class="animal-percent">${animalStats['家禽'].percent}%</div>
+                </div>
+            </div>
+        </div>
+    </div>`;
+}
+
+// 复制五行统计
+function copyWuxingStats() {
+    if (!systemState.lastResults) return;
+    
+    let text = '五行统计：\n';
+    const wuxingStats = systemState.lastResults.wuxingStats;
+    
+    const sortedWuxing = Object.entries(wuxingStats)
+        .sort((a, b) => parseFloat(b[1].percentage) - parseFloat(a[1].percentage));
+    
+    sortedWuxing.forEach(([name, data]) => {
+        text += `${name}: ${data.percentage}% (${data.total}次)\n`;
+        text += `数字: ${data.numbers.map(n => n.toString().padStart(2, '0')).join(' ')}\n\n`;
+    });
+    
+    navigator.clipboard.writeText(text).then(() => {
+        alert('五行统计已复制到剪贴板！');
+    }).catch(err => {
+        console.error('复制失败:', err);
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy');
+            alert('五行统计已复制到剪贴板！');
+        } catch (err) {
+            alert('复制失败，请手动复制: ' + text);
+        }
+        document.body.removeChild(textarea);
+    });
+}
+
+// 复制生肖统计
+function copyShengxiaoStats() {
+    if (!systemState.lastResults) return;
+    
+    const sxStats = systemState.lastResults.sxStats;
+    
+    const sortedSx = Object.entries(sxStats)
+        .map(([name, data]) => ({
+            name,
+            totalCount: data.totalCount
+        }))
+        .sort((a, b) => b.totalCount - a.totalCount);
+
+    const countGroups = {};
+    sortedSx.forEach(sx => {
+        const count = sx.totalCount;
+        if (!countGroups[count]) countGroups[count] = [];
+        countGroups[count].push(sx.name);
+    });
+
+    let text = '生肖统计：\n';
+    
+    Object.keys(countGroups)
+        .sort((a, b) => b - a)
+        .forEach(count => {
+            const sxList = countGroups[count].join(' ');
+            const totalSx = countGroups[count].length;
+            
+            text += `〖${count}次〗${sxList}（共计${totalSx}个）\n`;
+        });
+
+    navigator.clipboard.writeText(text).then(() => {
+        alert('生肖统计已复制到剪贴板！');
+    }).catch(err => {
+        console.error('复制失败:', err);
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy');
+            alert('生肖统计已复制到剪贴板！');
+        } catch (err) {
+            alert('复制失败，请手动复制: ' + text);
+        }
+        document.body.removeChild(textarea);
+    });
+}
+
+// 渲染结果
+function renderResults({ total, countGroups, wuxingStats, sxStats, animalStats }) {
+    let html = '';
+    
+    html += `<div class="stat-group">
+        <div class="stat-title">基础统计（共 ${total} 个）</div>
+        <div class="stat-content">
+            ${Object.keys(countGroups).sort((a, b) => b - a).map(count => 
+                `<div class="stat-line">〖${count}次〗${countGroups[count].sort((a, b) => a - b).map(n => n.toString().padStart(2, '0')).join(' ')}（共计${countGroups[count].length}个）</div>`
+            ).join('')}
+        </div>
+    </div>`;
+    
+    html += renderAnimalStats(animalStats);
+    
+    html += `<div class="stat-group">
+        <div class="stat-header">
+            <div class="stat-title">五行统计</div>
+            <div>
+                <span class="toggle-stat" id="toggleWuxingBtn">${systemState.uiState.showWuxing ? '隐藏' : '显示'}</span>
+                <button id="copyWuxingBtn" class="btn btn-copy">一键复制</button>
+            </div>
+        </div>
+        <div class="stat-content ${systemState.uiState.showWuxing ? '' : 'hidden'}" id="wuxingContent">
+            ${formatWuxingStats(wuxingStats)}
+        </div>
+    </div>`;
+    
+    html += `<div class="stat-group">
+        <div class="stat-header">
+            <div class="stat-title">生肖统计</div>
+            <div>
+                <span class="toggle-stat" id="toggleSxBtn">${systemState.uiState.showShengxiao ? '隐藏' : '显示'}</span>
+                <button id="copySxBtn" class="btn btn-copy">一键复制</button>
+            </div>
+        </div>
+        <div class="stat-content ${systemState.uiState.showShengxiao ? '' : 'hidden'}" id="sxContent">
+            ${formatShengxiaoStats(sxStats)}
+        </div>
+    </div>`;
+    
+    domElements.results.innerHTML = html;
+    
+    // 重新绑定事件
+    document.getElementById('toggleWuxingBtn').addEventListener('click', toggleWuxingDisplay);
+    document.getElementById('toggleSxBtn').addEventListener('click', toggleSxDisplay);
+    document.getElementById('copyWuxingBtn').addEventListener('click', copyWuxingStats);
+    document.getElementById('copySxBtn').addEventListener('click', copyShengxiaoStats);
+}
+
+// 切换五行显示
+function toggleWuxingDisplay() {
+    systemState.uiState.showWuxing = !systemState.uiState.showWuxing;
+    const content = document.getElementById('wuxingContent');
+    const btn = document.getElementById('toggleWuxingBtn');
+    if (content && btn) {
+        content.classList.toggle('hidden', !systemState.uiState.showWuxing);
+        btn.textContent = systemState.uiState.showWuxing ? '隐藏' : '显示';
+    }
+}
+
+// 切换生肖显示
+function toggleSxDisplay() {
+    systemState.uiState.showShengxiao = !systemState.uiState.showShengxiao;
+    const content = document.getElementById('sxContent');
+    const btn = document.getElementById('toggleSxBtn');
+    if (content && btn) {
+        content.classList.toggle('hidden', !systemState.uiState.showShengxiao);
+        btn.textContent = systemState.uiState.showShengxiao ? '隐藏' : '显示';
+    }
+}
+
+// 切换高级选项显示
+function toggleAdvancedOptions() {
+    systemState.uiState.showAdvancedOptions = !systemState.uiState.showAdvancedOptions;
+    domElements.advancedContent.classList.toggle('active', systemState.uiState.showAdvancedOptions);
+}
+
+// 解锁高级功能
+function unlockAdvanced() {
+    const password = domElements.advancedPassword.value;
+    if (password === CONFIG.advancedPassword) {
+        systemState.uiState.advancedUnlocked = true;
+        domElements.xinaoOptions.style.display = 'block';
+        alert('高级功能已解锁！');
+    } else {
+        alert('密码错误！');
+    }
+}
+
+// 锁定高级功能
+function lockAdvanced() {
+    systemState.uiState.advancedUnlocked = false;
+    domElements.xinaoOptions.style.display = 'none';
+    domElements.advancedPassword.value = '';
+    alert('高级功能已锁定！');
+}
+
+// 重置系统
+function clearAll() {
+    domElements.inputData.value = '';
+    systemState.activeFilters = {
+        heads: new Set(CONFIG.filters.heads),
+        tails: new Set(CONFIG.filters.tails),
+        shengxiao: new Set(Object.keys(CONFIG.filters.shengxiao))
+    };
+    document.querySelectorAll('.filter-item').forEach(btn => 
+        btn.classList.add('active'));
+    domElements.results.innerHTML = '';
+    domElements.filterResultContent.innerHTML = '请选择筛选条件...';
+    
+    systemState.uiState = {
+        showWuxing: false,
+        showShengxiao: true,
+        activeFilterSection: null,
+        showAdvancedOptions: false,
+        advancedUnlocked: false
+    };
+    
+    document.querySelectorAll('.filter-section').forEach(section => {
+        section.classList.remove('active');
+    });
+    
+    systemState.xinaoData = {
+        '1': new Set(),
+        '4': new Set(),
+        '8': new Set(),
+        '12': new Set()
+    };
+    
+    domElements.advancedContent.classList.remove('active');
+    domElements.xinaoOptions.style.display = 'none';
+    domElements.advancedPassword.value = '';
+    
+    initFilters();
+}
+
+// 初始化事件监听
+function initEventListeners() {
+    document.getElementById('analyzeBtn').addEventListener('click', analyze);
+    document.getElementById('resetBtn').addEventListener('click', clearAll);
+    document.getElementById('headFilterBtn').addEventListener('click', () => toggleFilterSection('head'));
+    document.getElementById('tailFilterBtn').addEventListener('click', () => toggleFilterSection('tail'));
+    document.getElementById('sxFilterBtn').addEventListener('click', () => toggleFilterSection('sx'));
+    document.getElementById('toggleAllHeads').addEventListener('click', () => toggleAll('heads'));
+    document.getElementById('toggleAllTails').addEventListener('click', () => toggleAll('tails'));
+    document.getElementById('toggleAllSx').addEventListener('click', () => toggleAll('shengxiao'));
+    document.getElementById('copyFilterBtn').addEventListener('click', copyFilterResult);
+    document.getElementById('toggleAdvancedBtn').addEventListener('click', toggleAdvancedOptions);
+    document.getElementById('unlockBtn').addEventListener('click', unlockAdvanced);
+    document.getElementById('lockBtn').addEventListener('click', lockAdvanced);
+}
+
+// 初始化应用
+function initApp() {
+    initFilters();
+    initEventListeners();
+}
+
+// 页面加载完成后初始化
+document.addEventListener('DOMContentLoaded', initApp);
+</script>
+</body>
+</html>
